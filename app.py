@@ -15,7 +15,6 @@ def predict():
     prediction=model.predict(feature_final)
     return render_template('index.html',prediction_text='Price of House will be Rs. {}'.format(int(prediction)))
 
-if(__name__=='__main__'):
-    from waitress import serve	
-    serve(app, host="0.0.0.0", port=8080)
+if __name__ == "__main__":
+    app.run(host= '0.0.0.0', port= 8080, debug=False)
 
